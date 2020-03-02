@@ -37,7 +37,7 @@ class ContactsTest extends TestCase
 
         $this->post('/api/contacts', $this->data());
 
-            $contact = Contact::first();
+        $contact = Contact::first();
 
         $this->assertEquals('Test name', $contact->name);
         $this->assertEquals('test@email.com',$contact->email);
@@ -80,7 +80,7 @@ class ContactsTest extends TestCase
     /** @test */
     public function a_contact_can_be_retrieved()
     {
-        $contact = factory(Contact::class)->create();
+        $contact = factory(Contact::class)->create(['user_id' => $this->user->id]);
 
         $response = $this->get('/api/contacts/'. $contact->id . '?api_token=' . $this->user->api_token);
 
@@ -93,10 +93,24 @@ class ContactsTest extends TestCase
     }
 
     /** @test */
+    public function contacts_belong_to_user()
+    {
+        $user = factory(User::class)->create();
+        $user2 = factory(User::class)->create();
+
+        $contact = factory(Contact::class)->create(['user_id' => $user->id]);
+        $contact2 = factory(Contact::class)->create(['user_id' => $user2->id]);
+
+        $response = $this->get('/api/contacts?api_token='.$user->api_token);
+
+        $response->assertJsonCount(1);
+    }
+
+    /** @test */
     public function a_contact_can_be_patched()
     {
         $this->withoutExceptionHandling();
-        $contact = factory(Contact::class)->create();
+        $contact = factory(Contact::class)->create(['user_id' => $this->user->id]);
 
         $response = $this->patch('/api/contacts/'.$contact->id, $this->data());
 
@@ -110,7 +124,7 @@ class ContactsTest extends TestCase
     /** @test */
     public function a_contact_can_be_deleted()
     {
-        $contact = factory(Contact::class)->create();
+        $contact = factory(Contact::class)->create(['user_id' => $this->user->id]);
         
         $response = $this->delete('/api/contacts/'. $contact->id, ['api_token'  => $this->user->api_token]);
 
