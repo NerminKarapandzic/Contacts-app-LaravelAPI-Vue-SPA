@@ -7,19 +7,33 @@ use App\Contact;
 
 class ContactsController extends Controller
 {
-    public function store(){
+    public function store()
+    {
+        Contact::create($this->validateData());
+    }
 
-        $data= request()->validate([
+    public function show(Contact $contact)
+    {
+        return $contact;
+    }
+
+    public function update(Contact $contact)
+    {
+        $contact->update($this->validateData());
+    }
+
+    public function destroy(Contact $contact)
+    {
+        $contact->delete();
+    }
+
+    private function validateData()
+    {
+        return request()->validate([
             'name' => 'required',
             'email' => 'required|email',
             'birthday' => 'required',
             'company' => 'required'
         ]);
-
-        Contact::create($data);
-    }
-    public function show(Contact $contact)
-    {
-        return $contact;
     }
 }

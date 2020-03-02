@@ -72,6 +72,31 @@ class ContactsTest extends TestCase
         ]);
     }
 
+    /** @test */
+    public function a_contact_can_be_patched()
+    {
+        $this->withoutExceptionHandling();
+        $contact = factory(Contact::class)->create();
+
+        $response = $this->patch('/api/contacts/'.$contact->id, $this->data());
+
+        $contact = $contact->fresh();
+
+        $this->assertEquals('Test name', $contact->name);
+        $this->assertEquals('test@email.com',$contact->email);
+        $this->assertEquals('ABC string', $contact->company);
+    }
+
+    /** @test */
+    public function a_contact_can_be_deleted()
+    {
+        $contact = factory(Contact::class)->create();
+        
+        $response = $this->delete('/api/contacts/'. $contact->id);
+
+        $this->assertCount(0,Contact::all());
+    }
+
     private function data()
     {
         return array(
