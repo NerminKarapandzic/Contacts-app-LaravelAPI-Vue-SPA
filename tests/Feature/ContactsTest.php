@@ -85,10 +85,12 @@ class ContactsTest extends TestCase
         $response = $this->get('/api/contacts/'. $contact->id . '?api_token=' . $this->user->api_token);
 
         $response->assertJson([
-            'name' => $contact->name,
-            'email' => $contact->email,
-            'birthday' => $contact->birthday,
-            'company' => $contact->company
+            'data' => [
+                'name' => $contact->name,
+                'email' => $contact->email,
+                'birthday' => $contact->birthday->format('d-m-Y'),
+                'company' => $contact->company
+            ]
         ]);
     }
 
@@ -103,7 +105,11 @@ class ContactsTest extends TestCase
 
         $response = $this->get('/api/contacts?api_token='.$user->api_token);
 
-        $response->assertJsonCount(1);
+        $response->assertJsonCount(1)->assertJson([
+            'data' => [
+                ['contact_id' => $contact->id]
+            ]
+        ]);
     }
 
     /** @test */
@@ -126,7 +132,7 @@ class ContactsTest extends TestCase
     {
         $contact = factory(Contact::class)->create(['user_id' => $this->user->id]);
         
-        $response = $this->delete('/api/contacts/'. $contact->id, ['api_token'  => $this->user->api_token]);
+        $response = $this->delete('/api/contacts/'. $contact->id, ['api_token'  => $this->user->api_token]);  
 
         $this->assertCount(0,Contact::all());
     }
