@@ -17,9 +17,11 @@ class ContactsController extends Controller
     }
     public function store()
     {
-        $this->authorize('viewAny', Contact::class);
+        $this->authorize('create', Contact::class);
 
-        request()->user()->contacts()->create($this->validateData());
+        $contact = request()->user()->contacts()->create($this->validateData());
+
+        return (new ContactResource($contact))->response()->setStatusCode(201);
     }
 
     public function show(Contact $contact)

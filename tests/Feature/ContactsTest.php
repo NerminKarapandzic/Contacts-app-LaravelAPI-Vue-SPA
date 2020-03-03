@@ -35,7 +35,7 @@ class ContactsTest extends TestCase
     {
         $user = factory(User::class)->create();
 
-        $this->post('/api/contacts', $this->data());
+        $response = $this->post('/api/contacts', $this->data());
 
         $contact = Contact::first();
 
