@@ -35,6 +35,12 @@
                 </button>
             </div>
         </form>
+
+        <div class="flex justify-between pt-8 text-white text-sm font-bold">
+            <a class="btn btn-link" href="{{ route('login') }}">
+                Back to login
+            </a>       
+        </div>
     </div>
 </div>
 @endsection
