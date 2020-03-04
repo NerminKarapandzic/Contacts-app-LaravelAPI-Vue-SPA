@@ -8,23 +8,56 @@
       :placeholder="placeholder"
       @input="updateField()"
       v-model="value"
+      :class="errorClassObject()"
     />
+    <p class="text-red-500 text-sm" v-text="errorMessage()"></p>
   </div>
 </template>
 
 <script>
 export default {
   name: "InputField",
-  props: ["name", "label", "placeholder"],
+  props: ["name", "label", "placeholder", "errors"],
   data: function() {
     return {
       value: ""
     };
   },
+  computed: {
+    hasErrors: function() {
+      return (
+        this.errors &&
+        this.errors[this.name] &&
+        this.errors[this.name].length > 0
+      );
+    }
+  },
   methods: {
     updateField: function() {
+      this.clearErrors();
       this.$emit("update:field", this.value);
+    },
+    errorMessage: function(field) {
+      if (this.hasErrors) {
+        return this.errors[this.name][0];
+      }
+    },
+    clearErrors: function() {
+      if (this.hasErrors) {
+        this.errors[this.name] = null;
+      }
+    },
+    errorClassObject: function() {
+      return {
+        "error-field": this.hasErrors
+      };
     }
   }
 };
 </script>
+
+<style scoped>
+.error-field {
+  @apply .border-red-500 .border-b-2;
+}
+</style>
