@@ -36,6 +36,8 @@ class ContactsController extends Controller
         $this->authorize('update', $contact);
 
         $contact->update($this->validateData());
+
+        return (new ContactResource($contact))->response()->setStatusCode(200);
     }
 
     public function destroy(Contact $contact)
@@ -43,6 +45,8 @@ class ContactsController extends Controller
         $this->authorize('delete', $contact);
 
         $contact->delete();
+
+        return response([],204);
     }
 
     private function validateData()
