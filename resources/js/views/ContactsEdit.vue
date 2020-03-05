@@ -1,5 +1,8 @@
 <template>
     <div>
+        <div class="flex justify-between">
+            <a href="#" @click="$router.back()" class="text-blue-400">Back</a>
+        </div>
         <form @submit.prevent="submitForm">
             <InputField
                 name="name"
@@ -7,6 +10,7 @@
                 placeholder="Contact Name"
                 @update:field="form.name = $event"
                 :errors="errors"
+                :data="form.name"
             />
             <InputField
                 name="email"
@@ -14,6 +18,7 @@
                 placeholder="E-mail"
                 @update:field="form.email = $event"
                 :errors="errors"
+                :data="form.email"
             />
             <InputField
                 name="company"
@@ -21,6 +26,7 @@
                 placeholder="Company"
                 @update:field="form.company = $event"
                 :errors="errors"
+                :data="form.company"
             />
             <InputField
                 name="birthday"
@@ -28,6 +34,7 @@
                 placeholder="DD/MM/YYY"
                 @update:field="form.birthday = $event"
                 :errors="errors"
+                :data="form.birthday"
             />
             <div class="flex justify-end">
                 <button
@@ -38,7 +45,7 @@
                 <button
                     class="bg-blue-500 px-4 py-2 rounded text-white hover:bg-blue-400"
                 >
-                    Add Contact
+                    Save
                 </button>
             </div>
         </form>
@@ -48,7 +55,7 @@
 <script>
 import InputField from "../components/InputField";
 export default {
-    name: "ContactsCreate",
+    name: "ContactsEdit",
     data: function() {
         return {
             form: {
@@ -63,10 +70,21 @@ export default {
     components: {
         InputField
     },
+    mounted() {
+        axios
+            .get("/api/contacts/" + this.$route.params.id)
+            .then(response => {
+                this.form = response.data.data;
+                this.loading = false;
+            })
+            .catch(error => {
+                this.loading = false;
+            });
+    },
     methods: {
         submitForm: function() {
             axios
-                .post("/api/contacts", this.form)
+                .patch("/api/contacts/" + this.$route.params.id, this.form)
                 .then(response => {
                     this.$router.push(response.data.data.links.self);
                 })
