@@ -1,20 +1,17 @@
 <template>
-    <div v-if="loading">Loading...</div>
-    <div v-else>
-        <div v-if="contacts.length == 0">No contacts yet</div>
-        <div v-for="contact in contacts">
-            <routerLink
-                :to="'/contacts/' + contact.contact_id"
-                class="flex items-center p-4 border-b border-gray-400 hover:bg-gray-100"
-            >
-                <userCircle :name="contact.name" />
-                <div class="pl-4">
-                    <p class="text-blue-400 font-bold">{{ contact.name }}</p>
-                    <p class="text-gray-600">{{ contact.company }}</p>
-                </div>
-            </routerLink>
-        </div>
+<div v-if="loading">Loading...</div>
+<div v-else>
+    <div v-if="contacts.length == 0">Niste dodali nijedan kontakt.</div>
+    <div v-for="contact in contacts">
+        <routerLink :to="'/contacts/' + contact.contact_id" class="flex items-center p-4 border-b border-gray-400 hover:bg-gray-100">
+            <userCircle :name="contact.name" />
+            <div class="pl-4">
+                <p class="text-blue-400 font-bold">{{ contact.name }}</p>
+                <p class="text-gray-600">{{ contact.phone }}</p>
+            </div>
+        </routerLink>
     </div>
+</div>
 </template>
 
 <script>

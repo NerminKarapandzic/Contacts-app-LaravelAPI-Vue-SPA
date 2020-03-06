@@ -40,8 +40,8 @@ class ContactsTest extends TestCase
         $contact = Contact::first();
 
         $this->assertEquals('Test name', $contact->name);
-        $this->assertEquals('test@email.com',$contact->email);
-        $this->assertEquals('ABC string', $contact->company);
+        $this->assertEquals('Tesanj',$contact->city);
+        $this->assertEquals('062720818', $contact->phone);
 
     }
 
@@ -131,8 +131,8 @@ class ContactsTest extends TestCase
     public function a_contact_can_be_deleted()
     {
         $contact = factory(Contact::class)->create(['user_id' => $this->user->id]);
-        
-        $response = $this->delete('/api/contacts/'. $contact->id, ['api_token'  => $this->user->api_token]);  
+
+        $response = $this->delete('/api/contacts/'. $contact->id, ['api_token'  => $this->user->api_token]);
 
         $this->assertCount(0,Contact::all());
     }
@@ -141,9 +141,9 @@ class ContactsTest extends TestCase
     {
         return array(
             'name' => 'Test name',
-            'email' => 'test@email.com',
-            'birthday' => '05/01/1996',
-            'company' => 'ABC string',
+            'city' => 'Tesanj',
+            'adress' => 'Mekis 156',
+            'phone' => '062720818',
             'api_token' => $this->user->api_token
         );
     }

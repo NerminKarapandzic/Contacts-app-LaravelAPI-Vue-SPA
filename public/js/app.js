@@ -1980,64 +1980,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
@@ -2114,18 +2056,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "InputField",
   props: ["name", "label", "placeholder", "errors", "data"],
@@ -2184,8 +2114,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "userCircle",
   props: ["name"],
@@ -2208,25 +2136,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_userCircle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/userCircle */ "./resources/js/components/userCircle.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2339,34 +2248,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ContactsCreate",
@@ -2374,9 +2255,9 @@ __webpack_require__.r(__webpack_exports__);
     return {
       form: {
         name: "",
-        email: "",
-        company: "",
-        birthday: ""
+        city: "",
+        adress: "",
+        phone: ""
       },
       errors: null
     };
@@ -2427,42 +2308,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ContactsEdit",
@@ -2470,9 +2315,9 @@ __webpack_require__.r(__webpack_exports__);
     return {
       form: {
         name: "",
-        email: "",
-        company: "",
-        birthday: ""
+        city: "",
+        adress: "",
+        phone: ""
       },
       errors: null
     };
@@ -2531,9 +2376,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ContactsIndex",
@@ -2573,7 +2415,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".error-field[data-v-eb71a80a] {\n  border-color: #f56565;\n  border-bottom-width: 2px;\n}\r\n", ""]);
+exports.push([module.i, ".error-field[data-v-eb71a80a] {\n  border-color: #f56565;\n  border-bottom-width: 2px;\n}\n", ""]);
 
 // exports
 
@@ -20820,22 +20662,12 @@ var render = function() {
             [
               _c("router-link", { attrs: { to: "/" } }, [
                 _c(
-                  "svg",
+                  "h1",
                   {
-                    staticClass: "fill-current text-blue-600 w-12 h-12",
-                    attrs: {
-                      xmlns: "http://www.w3.org/2000/svg",
-                      viewBox: "0 0 24 24"
-                    }
+                    staticClass:
+                      "fill-current text-blue-600 w-full text-xl font-bold h-12"
                   },
-                  [
-                    _c("path", {
-                      attrs: {
-                        d:
-                          "M3.9 4.2c-.5 0-.8.3-.8.8s.4.8.8.8c.5 0 .8-.4.8-.8.1-.5-.3-.8-.8-.8zM3.3 18.6c0 1.4-.2 2.1-1.5 2.1-.3 0-.7 0-.9-.1l-.3 1.1c.3.1.7.2 1.1.2 1.9 0 2.7-1.2 2.7-3.2V8.1H3.3v10.5zM9.4 17.5c1.4 0 2.3-.4 3-1.2.8-1 1.1-2.1 1.1-3.8 0-1.4-.2-2.7-1-3.5-.6-.7-1.5-1.1-2.9-1.1s-2.3.4-3 1.2c-.8 1-1.1 2.2-1.1 3.8 0 1.5.2 2.6 1 3.5.6.7 1.5 1.1 2.9 1.1zM7.5 9.7c.3-.4.9-.8 2-.8 1 0 1.6.3 1.9.7.5.6.7 1.7.7 2.9s-.2 2.4-.7 3.1c-.3.4-.9.8-2 .8-1 0-1.6-.3-1.9-.7-.5-.6-.7-1.6-.7-2.9 0-1.2.2-2.4.7-3.1zM15 14.4c0 2.1.4 3.1 2.5 3.1.6 0 1.3-.1 1.8-.2l-.1-1c-.5.1-1 .2-1.5.2-1.4 0-1.5-.6-1.5-2.1v-5h3V8.3h-3v-3l-1.2.2v2.7h-1.8v1.1H15v5.1zM6 18h17v1H6z"
-                      }
-                    })
-                  ]
+                  [_vm._v("Factor Company")]
                 )
               ]),
               _vm._v(" "),
@@ -20844,7 +20676,7 @@ var render = function() {
                 {
                   staticClass: "uppercase text-gray-500 text-xs font-bold pt-12"
                 },
-                [_vm._v("\n                    create\n                ")]
+                [_vm._v("\r\n                    Akcije\r\n                ")]
               ),
               _vm._v(" "),
               _c(
@@ -20878,7 +20710,7 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n                        Add New\n                    "
+                        "\r\n                        Dodaj novi\r\n                    "
                       )
                     ]
                   )
@@ -20890,7 +20722,11 @@ var render = function() {
                 {
                   staticClass: "uppercase text-gray-500 text-xs font-bold pt-12"
                 },
-                [_vm._v("\n                    general\n                ")]
+                [
+                  _vm._v(
+                    "\r\n                    generalno\r\n                "
+                  )
+                ]
               ),
               _vm._v(" "),
               _c(
@@ -20928,47 +20764,7 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n                        Contacts\n                    "
-                      )
-                    ]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                {
-                  staticClass: "flex items-center py-2 text-sm",
-                  attrs: { to: "/" }
-                },
-                [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "fill-current text-blue-600 w-5 h-5",
-                      attrs: { viewBox: "0 0 24 24" }
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          "fill-rule": "evenodd",
-                          d:
-                            "M12.1 6.8c1.2 0 2.1-1 2.1-2.1 0-.4-.1-.8-.3-1.1L12.1.5l-1.8 3.1c-.2.3-.3.6-.3 1 0 1.2 1 2.2 2.1 2.2zm6.4 3.1h-5.3V7.8h-2.1v2.1H5.8c-1.8 0-3.2 1.4-3.2 3.2v9.5c0 .6.5 1.1 1.1 1.1h16.9c.6 0 1.1-.5 1.1-1.1v-9.5c0-1.8-1.5-3.2-3.2-3.2zm1 11.7H4.7v-3.2c1 0 1.9-.4 2.5-1.1l1.2-1.1 1.1 1.1c1.4 1.4 3.8 1.4 5.2 0l1.1-1.1 1.1 1.1c.7.7 1.6 1.1 2.5 1.1v3.2h.1zm0-4.8c-.5 0-1-.2-1.4-.6l-2.3-2.3-2.3 2.3c-.8.8-2.1.8-2.9 0l-2.3-2.3L6 16.2c-.4.4-.9.6-1.4.6v-3.7c0-.6.5-1.1 1.1-1.1h12.7c.6 0 1.1.5 1.1 1.1v3.7z",
-                          "clip-rule": "evenodd"
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "tracking-wide pl-3 hover:text-blue-500 text-gray-600 font-bold"
-                    },
-                    [
-                      _vm._v(
-                        "\n                        Birthdays\n                    "
+                        "\r\n                        Kontakti\r\n                    "
                       )
                     ]
                   )
@@ -20980,7 +20776,7 @@ var render = function() {
                 {
                   staticClass: "uppercase text-gray-500 text-xs font-bold pt-12"
                 },
-                [_vm._v("\n                    settings\n                ")]
+                [_vm._v("\r\n                    Postavke\r\n                ")]
               ),
               _vm._v(" "),
               _c(
@@ -21014,7 +20810,7 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n                        Logout\n                    "
+                        "\r\n                        Logout\r\n                    "
                       )
                     ]
                   )
@@ -21037,7 +20833,7 @@ var render = function() {
                 "h-16 p-6 border-b border-gray-400 flex items-center justify-between"
             },
             [
-              _c("div", [_vm._v("Contacts")]),
+              _c("div", [_vm._v("Kontakti")]),
               _vm._v(" "),
               _c("userCircle", { attrs: { name: _vm.user.name } })
             ],
@@ -21197,7 +20993,7 @@ var render = function() {
       staticClass:
         "rounded-full text-white bg-blue-400 w-10 h-10 flex items-center justify-center border-gray-400"
     },
-    [_vm._v("\n    " + _vm._s(_vm.userName) + "\n")]
+    [_vm._v("\r\n    " + _vm._s(_vm.userName) + "\r\n")]
   )
 }
 var staticRenderFns = []
@@ -21238,7 +21034,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Back")]
+              [_vm._v("Nazad")]
             ),
             _vm._v(" "),
             _c(
@@ -21254,7 +21050,7 @@ var render = function() {
                       to: "/contacts/" + _vm.contact.contact_id + "/edit"
                     }
                   },
-                  [_vm._v("Edit")]
+                  [_vm._v("Uredi")]
                 ),
                 _vm._v(" "),
                 _c(
@@ -21269,7 +21065,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("Delete")]
+                  [_vm._v("Izbriši")]
                 ),
                 _vm._v(" "),
                 _vm.modal
@@ -21280,7 +21076,7 @@ var render = function() {
                           "absolute rounded-lg bg-blue-400 text-white p-6 z-20 w-64 right-0 mt-4"
                       },
                       [
-                        _c("p", [_vm._v("Are you sure you want to delete?")]),
+                        _c("p", [_vm._v("Da li ste sigurni?")]),
                         _vm._v(" "),
                         _c(
                           "div",
@@ -21298,7 +21094,7 @@ var render = function() {
                               },
                               [
                                 _vm._v(
-                                  "\n                            Cancel\n                        "
+                                  "\r\n                            Odustani\r\n                        "
                                 )
                               ]
                             ),
@@ -21312,7 +21108,7 @@ var render = function() {
                               },
                               [
                                 _vm._v(
-                                  "\n                            Delete\n                        "
+                                  "\r\n                            Izbriši\r\n                        "
                                 )
                               ]
                             )
@@ -21342,31 +21138,31 @@ var render = function() {
           _c(
             "p",
             { staticClass: "pt-6 text-gray-600 font-bold uppercase font-sm" },
-            [_vm._v("\n            Contact\n        ")]
+            [_vm._v("\r\n            Broj telefona\r\n        ")]
           ),
           _vm._v(" "),
           _c("p", { staticClass: "pt-2 text-blue-400" }, [
-            _vm._v(_vm._s(_vm.contact.email))
+            _vm._v(_vm._s(_vm.contact.phone))
           ]),
           _vm._v(" "),
           _c(
             "p",
             { staticClass: "pt-6 text-gray-600 font-bold uppercase font-sm" },
-            [_vm._v("\n            Company\n        ")]
+            [_vm._v("\r\n            Grad\r\n        ")]
           ),
           _vm._v(" "),
           _c("p", { staticClass: "pt-2 text-blue-400" }, [
-            _vm._v(_vm._s(_vm.contact.company))
+            _vm._v(_vm._s(_vm.contact.city))
           ]),
           _vm._v(" "),
           _c(
             "p",
             { staticClass: "pt-6 text-gray-600 font-bold uppercase font-sm" },
-            [_vm._v("\n            Birthday\n        ")]
+            [_vm._v("\r\n            Adresa\r\n        ")]
           ),
           _vm._v(" "),
           _c("p", { staticClass: "pt-2 text-blue-400" }, [
-            _vm._v(_vm._s(_vm.contact.birthday))
+            _vm._v(_vm._s(_vm.contact.adress))
           ])
         ])
       ])
@@ -21408,8 +21204,8 @@ var render = function() {
         _c("InputField", {
           attrs: {
             name: "name",
-            label: "Contact Name",
-            placeholder: "Contact Name",
+            label: "Ime i prezime",
+            placeholder: "Ime i prezime",
             errors: _vm.errors
           },
           on: {
@@ -21421,42 +21217,42 @@ var render = function() {
         _vm._v(" "),
         _c("InputField", {
           attrs: {
-            name: "email",
-            label: "e-mail",
-            placeholder: "E-mail",
+            name: "city",
+            label: "Grad",
+            placeholder: "Grad",
             errors: _vm.errors
           },
           on: {
             "update:field": function($event) {
-              _vm.form.email = $event
+              _vm.form.city = $event
             }
           }
         }),
         _vm._v(" "),
         _c("InputField", {
           attrs: {
-            name: "company",
-            label: "company",
-            placeholder: "Company",
+            name: "adress",
+            label: "Adresa",
+            placeholder: "Adresa",
             errors: _vm.errors
           },
           on: {
             "update:field": function($event) {
-              _vm.form.company = $event
+              _vm.form.adress = $event
             }
           }
         }),
         _vm._v(" "),
         _c("InputField", {
           attrs: {
-            name: "birthday",
-            label: "Birthday",
-            placeholder: "DD/MM/YYY",
+            name: "phone",
+            label: "Broj telefona",
+            placeholder: "062/ 062 / 062",
             errors: _vm.errors
           },
           on: {
             "update:field": function($event) {
-              _vm.form.birthday = $event
+              _vm.form.phone = $event
             }
           }
         }),
@@ -21479,7 +21275,7 @@ var staticRenderFns = [
           staticClass:
             "px-4 py-2 rounded text-red-500 border mr-5 hover:border-red-700"
         },
-        [_vm._v("\n                Cancel\n            ")]
+        [_vm._v("\r\n                Odustani\r\n            ")]
       ),
       _vm._v(" "),
       _c(
@@ -21488,7 +21284,7 @@ var staticRenderFns = [
           staticClass:
             "bg-blue-500 px-4 py-2 rounded text-white hover:bg-blue-400"
         },
-        [_vm._v("\n                Add Contact\n            ")]
+        [_vm._v("\r\n                Dodaj kontakt\r\n            ")]
       )
     ])
   }
@@ -21545,7 +21341,7 @@ var render = function() {
         _c("InputField", {
           attrs: {
             name: "name",
-            label: "Contact Name",
+            label: "Ime i prezime",
             placeholder: "Contact Name",
             errors: _vm.errors,
             data: _vm.form.name
@@ -21559,45 +21355,45 @@ var render = function() {
         _vm._v(" "),
         _c("InputField", {
           attrs: {
-            name: "email",
-            label: "e-mail",
-            placeholder: "E-mail",
+            name: "city",
+            label: "Grad",
+            placeholder: "City",
             errors: _vm.errors,
-            data: _vm.form.email
+            data: _vm.form.city
           },
           on: {
             "update:field": function($event) {
-              _vm.form.email = $event
+              _vm.form.city = $event
             }
           }
         }),
         _vm._v(" "),
         _c("InputField", {
           attrs: {
-            name: "company",
-            label: "company",
-            placeholder: "Company",
+            name: "adress",
+            label: "Adresa",
+            placeholder: "Adress",
             errors: _vm.errors,
-            data: _vm.form.company
+            data: _vm.form.adress
           },
           on: {
             "update:field": function($event) {
-              _vm.form.company = $event
+              _vm.form.adress = $event
             }
           }
         }),
         _vm._v(" "),
         _c("InputField", {
           attrs: {
-            name: "birthday",
-            label: "Birthday",
-            placeholder: "DD/MM/YYY",
+            name: "phone",
+            label: "Broj telefona",
+            placeholder: "062/ 062/ 062",
             errors: _vm.errors,
-            data: _vm.form.birthday
+            data: _vm.form.phone
           },
           on: {
             "update:field": function($event) {
-              _vm.form.birthday = $event
+              _vm.form.phone = $event
             }
           }
         }),
@@ -21620,7 +21416,7 @@ var staticRenderFns = [
           staticClass:
             "px-4 py-2 rounded text-red-500 border mr-5 hover:border-red-700"
         },
-        [_vm._v("\n                Cancel\n            ")]
+        [_vm._v("Odustani")]
       ),
       _vm._v(" "),
       _c(
@@ -21629,7 +21425,7 @@ var staticRenderFns = [
           staticClass:
             "bg-blue-500 px-4 py-2 rounded text-white hover:bg-blue-400"
         },
-        [_vm._v("\n                Save\n            ")]
+        [_vm._v("Sačuvaj")]
       )
     ])
   }
@@ -21661,7 +21457,7 @@ var render = function() {
         "div",
         [
           _vm.contacts.length == 0
-            ? _c("div", [_vm._v("No contacts yet")])
+            ? _c("div", [_vm._v("Niste dodali nijedan kontakt.")])
             : _vm._e(),
           _vm._v(" "),
           _vm._l(_vm.contacts, function(contact) {
@@ -21684,7 +21480,7 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("p", { staticClass: "text-gray-600" }, [
-                        _vm._v(_vm._s(contact.company))
+                        _vm._v(_vm._s(contact.phone))
                       ])
                     ])
                   ],
@@ -37177,7 +36973,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_ContactsCreate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/ContactsCreate */ "./resources/js/views/ContactsCreate.vue");
 /* harmony import */ var _views_Contact__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/Contact */ "./resources/js/views/Contact.vue");
 /* harmony import */ var _views_ContactsEdit__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/ContactsEdit */ "./resources/js/views/ContactsEdit.vue");
-/* harmony import */ var _views_ContactsIndex__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/ContactsIndex */ "./resources/js/views/ContactsIndex.vue");
+/* harmony import */ var _views_ContactsIndex__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/ContactsIndex */ "./resources/js/views/ContactsIndex.vue");
 
 
 
@@ -37192,7 +36988,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: _components_ExampleComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
     path: "/contacts",
-    component: _views_ContactsIndex__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _views_ContactsIndex__WEBPACK_IMPORTED_MODULE_6__["default"]
   }, {
     path: "/contacts/create",
     component: _views_ContactsCreate__WEBPACK_IMPORTED_MODULE_3__["default"]

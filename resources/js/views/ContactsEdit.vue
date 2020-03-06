@@ -1,55 +1,19 @@
 <template>
-    <div>
-        <div class="flex justify-between">
-            <a href="#" @click="$router.back()" class="text-blue-400">Back</a>
-        </div>
-        <form @submit.prevent="submitForm">
-            <InputField
-                name="name"
-                label="Contact Name"
-                placeholder="Contact Name"
-                @update:field="form.name = $event"
-                :errors="errors"
-                :data="form.name"
-            />
-            <InputField
-                name="email"
-                label="e-mail"
-                placeholder="E-mail"
-                @update:field="form.email = $event"
-                :errors="errors"
-                :data="form.email"
-            />
-            <InputField
-                name="company"
-                label="company"
-                placeholder="Company"
-                @update:field="form.company = $event"
-                :errors="errors"
-                :data="form.company"
-            />
-            <InputField
-                name="birthday"
-                label="Birthday"
-                placeholder="DD/MM/YYY"
-                @update:field="form.birthday = $event"
-                :errors="errors"
-                :data="form.birthday"
-            />
-            <div class="flex justify-end">
-                <button
-                    class="px-4 py-2 rounded text-red-500 border mr-5 hover:border-red-700"
-                >
-                    Cancel
-                </button>
-                <button
-                    class="bg-blue-500 px-4 py-2 rounded text-white hover:bg-blue-400"
-                >
-                    Save
-                </button>
-            </div>
-        </form>
+<div>
+    <div class="flex justify-between">
+        <a href="#" @click="$router.back()" class="text-blue-400">Back</a>
     </div>
+    <form @submit.prevent="submitForm">
+        <InputField name="name" label="Ime i prezime" placeholder="Contact Name" @update:field="form.name = $event" :errors="errors" :data="form.name" />
+        <InputField name="city" label="Grad" placeholder="City" @update:field="form.city = $event" :errors="errors" :data="form.city" />
+        <InputField name="adress" label="Adresa" placeholder="Adress" @update:field="form.adress = $event" :errors="errors" :data="form.adress" />
+        <InputField name="phone" label="Broj telefona" placeholder="062/ 062/ 062" @update:field="form.phone = $event" :errors="errors" :data="form.phone" />
+        <div class="flex justify-end">
+            <button class="px-4 py-2 rounded text-red-500 border mr-5 hover:border-red-700">Odustani</button>
+            <button class="bg-blue-500 px-4 py-2 rounded text-white hover:bg-blue-400">Sačuvaj</button>
+        </div>
+    </form>
+</div>
 </template>
 
 <script>
@@ -60,9 +24,9 @@ export default {
         return {
             form: {
                 name: "",
-                email: "",
-                company: "",
-                birthday: ""
+                city: "",
+                adress: "",
+                phone: ""
             },
             errors: null
         };

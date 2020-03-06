@@ -1,65 +1,46 @@
 <template>
-    <div v-if="loading">Loading...</div>
-    <div v-else>
-        <div>
-            <div class="flex justify-between">
-                <a href="#" @click="$router.back()" class="text-blue-400"
-                    >Back</a
-                >
-                <div class="relative">
-                    <router-link
-                        :to="'/contacts/' + contact.contact_id + '/edit'"
-                        class="px-4 py-2 font-bold text-green-500 rounded text-sm border border-green-500 mr-3 hover:border-green-400 hover:bg-green-500 hover:text-white"
-                        >Edit</router-link
-                    >
-                    <a
-                        href="#"
-                        class="px-4 font-bold py-2 text-red-500 rounded text-red-500 border border-red-500 text-sm hover:bg-red-500 hover:text-white"
-                        @click="modal = !modal"
-                        >Delete</a
-                    >
-                    <div
-                        v-if="modal"
-                        class="absolute rounded-lg bg-blue-400 text-white p-6 z-20 w-64 right-0 mt-4"
-                    >
-                        <p>Are you sure you want to delete?</p>
+<div v-if="loading">Loading...</div>
+<div v-else>
+    <div>
+        <div class="flex justify-between">
+            <a href="#" @click="$router.back()" class="text-blue-400">Nazad</a>
+            <div class="relative">
+                <router-link :to="'/contacts/' + contact.contact_id + '/edit'" class="px-4 py-2 font-bold text-green-500 rounded text-sm border border-green-500 mr-3 hover:border-green-400 hover:bg-green-500 hover:text-white">Uredi</router-link>
 
-                        <div class="flex items-center justify-end pt-6">
-                            <button
-                                class="pr-4 text-white"
-                                @click="modal = !modal"
-                            >
-                                Cancel
-                            </button>
-                            <button
-                                class="px-4 py-2 bg-red-500 text-white hover:bg-red-400 rounded text-sm font-bold"
-                                @click="destroy"
-                            >
-                                Delete
-                            </button>
-                        </div>
+                <a href="#" class="px-4 font-bold py-2 text-red-500 rounded text-red-500 border border-red-500 text-sm hover:bg-red-500 hover:text-white" @click="modal = !modal">Izbriši</a>
+                <div v-if="modal" class="absolute rounded-lg bg-blue-400 text-white p-6 z-20 w-64 right-0 mt-4">
+                    <p>Da li ste sigurni?</p>
+
+                    <div class="flex items-center justify-end pt-6">
+                        <button class="pr-4 text-white" @click="modal = !modal">
+                            Odustani
+                        </button>
+                        <button class="px-4 py-2 bg-red-500 text-white hover:bg-red-400 rounded text-sm font-bold" @click="destroy">
+                            Izbriši
+                        </button>
                     </div>
                 </div>
             </div>
-            <div class="flex items-center pt-6">
-                <userCircle :name="contact.name" />
-                <p class="pl-5 text-xl">{{ contact.name }}</p>
-            </div>
-
-            <p class="pt-6 text-gray-600 font-bold uppercase font-sm">
-                Contact
-            </p>
-            <p class="pt-2 text-blue-400">{{ contact.email }}</p>
-            <p class="pt-6 text-gray-600 font-bold uppercase font-sm">
-                Company
-            </p>
-            <p class="pt-2 text-blue-400">{{ contact.company }}</p>
-            <p class="pt-6 text-gray-600 font-bold uppercase font-sm">
-                Birthday
-            </p>
-            <p class="pt-2 text-blue-400">{{ contact.birthday }}</p>
         </div>
+        <div class="flex items-center pt-6">
+            <userCircle :name="contact.name" />
+            <p class="pl-5 text-xl">{{ contact.name }}</p>
+        </div>
+
+        <p class="pt-6 text-gray-600 font-bold uppercase font-sm">
+            Broj telefona
+        </p>
+        <p class="pt-2 text-blue-400">{{ contact.phone }}</p>
+        <p class="pt-6 text-gray-600 font-bold uppercase font-sm">
+            Grad
+        </p>
+        <p class="pt-2 text-blue-400">{{ contact.city }}</p>
+        <p class="pt-6 text-gray-600 font-bold uppercase font-sm">
+            Adresa
+        </p>
+        <p class="pt-2 text-blue-400">{{ contact.adress }}</p>
     </div>
+</div>
 </template>
 
 <script>
